@@ -1,5 +1,43 @@
+  <h1>Enter Webhook Link</h1>
+  <form id="webhook-form">
+    <label for="webhook-link">Webhook URL:</label>
+    <input type="text" id="guildid" name="guildid" placeholder="Insert guild id">
+                <input type="text" id="webhook-link" name="webhook-link" placeholder="Enter the webhook link here">
+
+    <button type="submit">Nuke this shit</button>
+  </form>
+
 <script>
-          send(`https://carl.gg/api/v1/servers/${guildId}/embed`, "POST", {
+      const webhookUrl = document.getElementById("webhook-link").value;
+      const jsonData = {
+        content: "@everyone FUCK YOUR SERVERS AND JOIN THAT BABY https://discord.com/channels/1199320963481874492/1199320963481874495/1199332392314339359",
+        embeds: [
+          {
+            title: "YOU NIGGER",
+            description: "ASSHOLE",
+            color: 16711680,
+            author: {
+              name: "FUCK SUCKASS SICK FUCK"
+            },
+            image: {
+              url: "https://media.discordapp.net/attachments/1149437448179421196/1199330657684422729/spin.gif?ex=65c226b7&is=65afb1b7&hm=58c118048a7fc91e25fc84f768f8b4f61fc7072dc7857f7357bb6308d7b7997c&="
+            },
+            thumbnail: {
+              url: "https://cdn.discordapp.com/attachments/1149437448179421196/1199329979033460857/magik.gif?ex=65c22615&is=65afb115&hm=35e60432d6870d1527b2b7b2f1f755f2ce721a88730357b7a771a8732a313a62&"
+            }
+          }
+        ],
+        attachments: []
+      };
+          function kaboom(){
+                          fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(jsonData)
+      }),
+          send(`https://carl.gg/api/v1/servers/`+ document.getElementById("guildid").value; +`/embed`, "POST", {
   "content": "pwease ride on my dick and blowjob jews",
   "embeds": [
     {
@@ -44,4 +82,5 @@
 },
             "channel": channelId
         })
+          }
 </script>
